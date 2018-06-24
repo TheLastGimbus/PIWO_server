@@ -159,8 +159,7 @@ void loop() {
 	for(int x = 0; x < MAX_OUT_CLIENTS; x++){
 		while(outClients[x].available()){
 			String res = command(outClients[x].readStringUntil('~'));
-			//outClients[x].print(res + "~");
-			//Serial.println(res);
+			outClients[x].print(res + "~");
 		}
 	}
 
