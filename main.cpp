@@ -17,9 +17,9 @@ WiFiClient outClients[MAX_OUT_CLIENTS];
 
 ADC_MODE(ADC_VCC);
 
-int rTune = 55;
+int rTune = 65;
 int gTune = 255;
-int bTune = 255;
+int bTune = 245;
 
 void connectToWifi(const char* name, const char* password){
 	WiFi.mode(WIFI_STA);
@@ -116,6 +116,24 @@ String command(String com){
 			response += (outClients[x].remoteIP().toString() + "\n");
 		}
 		response += ("=====================\n");
+	}
+	if(com.indexOf("setTuneMax") == 0){
+		com.remove(0, 10);
+		long long hexCol = strtoll(&com[1], NULL, 16);
+		rTune = hexCol >> 16;
+		gTune = hexCol >> 8 & 0xFF;
+		bTune = hexCol & 0xFF;
+		com.remove(0, 7);
+		response += ("New max tune values: \n");
+		response += ("Red: " + String(rTune) + " \n");
+		response += ("Green: " + String(gTune) + " \n");
+		response += ("Blue: " + String(bTune) + " \n");
+	}
+	if(com.indexOf("getTuneMax") == 0){
+		response += ("Max tune values: \n");
+		response += ("Red: " + String(rTune) + " \n");
+		response += ("Green: " + String(gTune) + " \n");
+		response += ("Blue: " + String(bTune) + " \n");
 	}
 	if(com.indexOf("#") == 0){
 		int pixels = com.length() / 7;
