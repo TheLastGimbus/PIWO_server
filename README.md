@@ -1,6 +1,6 @@
 # PIWO_server
 ## EN:
-###### Server side in PIWO Lite
+##### Server side in PIWO Lite
 Main idea of PIWO Lite is to make screen out of a whole building. This idea was originally made by MOS, a group of people from Wroclaw University of Technology, you can learn more about it here:
 http://www.mos.pwr.edu.pl/projekt-p-i-w-o/
 
@@ -8,7 +8,7 @@ To dispal a frame, just send (through TCP or UART) server long, solid string of 
 Then, server will split it, and send to all proper pixels (clients).
 
 ## PL:
-##### Serwer w PIWO Lite
+#### Serwer w PIWO Lite
 Zamysłem projektu PIWO Lite jest zrobienie ekranu z całego budynku. Oryginalnymi autorami tego pomysłu jest koło naukowe MOS z Politechniki Wrocławskiej, więcej o ich projekcie znajdziesz tutaj:
 http://www.mos.pwr.edu.pl/projekt-p-i-w-o/
 
