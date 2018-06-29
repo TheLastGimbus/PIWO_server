@@ -3,8 +3,8 @@
 const char* wifiName = "Broadcom";
 const char* wifiPass = "";
 
-#define serverPort 3000
-IPAddress localIP = IPAddress(192, 168, 1, 200);
+#define serverPort 5000
+IPAddress localIP = IPAddress(192, 168, 1, 100);
 WiFiServer server(serverPort);
 
 #define MAX_NET_CLIENTS 4
@@ -157,7 +157,7 @@ void setup() {
 	digitalWrite(2, 1);
 
 	for(int x = 0; x < MAX_NET_CLIENTS; x++)
-		networkAddresses[x] = IPAddress(192, 168, 1, (201 + x));
+		networkAddresses[x] = IPAddress(192, 168, 1, (101 + x));
 
 	connectToWifi(wifiName, wifiPass);
 }
