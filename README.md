@@ -1,19 +1,21 @@
 # PIWO_server
 
 ### PL:
-##### Serwer w PIWO Lite
+##### Czym jest PIWO Lite?
 Zamysłem projektu PIWO Lite jest zrobienie ekranu z całego budynku. Oryginalnymi autorami tego pomysłu jest koło naukowe MOS z Politechniki Wrocławskiej, więcej o ich projekcie znajdziesz tutaj:
 http://www.mos.pwr.edu.pl/projekt-p-i-w-o/
-PIWO Lite ma być moją, budżetową wersją ich projektu.
+PIWO Lite jest budżetową wersją ich projektu.
 
+##### Serwer w PIWO Lite
 Aby wyświetlić jedną klatke, wystarczy wysłać (poprzez TCP lub UART) jeden zbity tekst zawierający wszystkie piksele w postaci koloru hex, bez odstępów czy innych symboli pomiędzy pikselami. Kolejność pikseli jest taka, jak przy czytaniu, od lewej do prawej, następnie od góry do dołu. Na przykład, klatka 2x2 piksele w której prawy-górny i lewy-dolny róg są zapalone będzie wyglądać tak: "#000000#ffffff#FFFFFF#000000" (wielkość znaków nie ma znaczenia). Serwer samodzielnie rozdzieli tekst i wyśle każdemu modułowy (pikselowi) odpowiednią wiadomość.
 
 
 ### EN:
-##### Server side in PIWO Lite
+##### What is PIWO Lite?
 Main idea of PIWO Lite is to make screen out of a whole building. This idea was originally made by MOS, a group of people from Wroclaw University of Technology, you can learn more about it here:
 http://www.mos.pwr.edu.pl/projekt-p-i-w-o/
 PIWO Lite is a low-budget verstion of their project.
 
+##### Server side in PIWO Lite
 To dispal a frame, just send (through TCP or UART) server long, solid string of hex color values, without any spacers. Count pixels like you read, that is from left to right, then up to down. For example, if your dispay is 2x2 pxl, and you want to light up up-right and down-left, send "#000000#ffffff#FFFFFF#000000" (upper-lower case doesn't matter).
 Then, server will split it, and send to all proper pixels (clients).
